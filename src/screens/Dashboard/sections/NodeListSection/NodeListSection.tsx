@@ -18,9 +18,12 @@ interface NodeListSectionProps {
 export const NodeListSection = ({ activeTab, setActiveTab, searchQuery, setSearchQuery }: NodeListSectionProps): JSX.Element => {
   const { t } = useLanguage();
 
+  // Debug: Log every render
+  console.log('NodeListSection rendered with activeTab:', activeTab);
+
   // Execute logic whenever activeTab changes
   useEffect(() => {
-    console.log('Active tab changed to:', activeTab);
+    console.log('useEffect triggered - Active tab changed to:', activeTab);
     
     // Add your custom logic here
     // For example:
