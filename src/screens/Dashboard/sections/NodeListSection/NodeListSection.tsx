@@ -1,5 +1,5 @@
 import { SearchIcon } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input } from "../../../../components/ui/input";
 import { useLanguage } from "../../../../contexts/LanguageContext";
 import { LanguageSelector } from "../../../../components/LanguageSelector";
@@ -17,6 +17,24 @@ interface NodeListSectionProps {
 
 export const NodeListSection = ({ activeTab, setActiveTab, searchQuery, setSearchQuery }: NodeListSectionProps): JSX.Element => {
   const { t } = useLanguage();
+
+  // Execute logic whenever activeTab changes
+  useEffect(() => {
+    console.log('Active tab changed to:', activeTab);
+    
+    // Add your custom logic here
+    // For example:
+    // - Clear search when switching tabs
+    // - Load different data
+    // - Update analytics
+    // - Reset filters
+    
+    // Example: Clear search when switching to Ecosystem tab
+    if (activeTab === 'Ecosystem') {
+      setSearchQuery('');
+    }
+    
+  }, [activeTab, setSearchQuery]);
 
   const navigationTabs = [
     { label: "All Nodes", key: "nav.allNodes" },
