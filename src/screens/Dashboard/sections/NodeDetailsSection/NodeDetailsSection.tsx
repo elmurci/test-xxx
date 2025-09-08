@@ -420,7 +420,281 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
           </header>
 
           <main className="flex flex-col items-start gap-4 pt-0 pb-4 px-0 relative flex-1 self-stretch w-full grow">
-            MAP
+            {/* Node Status and Metrics */}
+            <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
+              <div className="grid grid-cols-2 gap-3">
+                <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                        Status
+                      </div>
+                      <div className="w-2 h-2 bg-[#5fe9b5] rounded-full"></div>
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+                      Online
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-[#5fe9b5] text-xs mt-1">
+                      99.8% uptime
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                  <CardContent className="p-4">
+                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-2">
+                      Response Time
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+                      12ms
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mt-1">
+                      avg last 24h
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                  <CardContent className="p-3 text-center">
+                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                      CPU Usage
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                      23%
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                  <CardContent className="p-3 text-center">
+                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                      Memory
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                      4.2GB
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                  <CardContent className="p-3 text-center">
+                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                      Storage
+                    </div>
+                    <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                      128GB
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <Separator className="bg-[#292929] mx-4" />
+
+            {/* Node Information */}
+            <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
+              <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                Node Information
+              </h3>
+              
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                    Node ID
+                  </span>
+                  <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm font-mono">
+                    {selectedNode?.node_id?.substring(0, 16)}...
+                  </span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                    IP Address
+                  </span>
+                  <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm font-mono">
+                    {selectedNode?.ip !== "XXXX" ? selectedNode?.ip : "Hidden"}
+                  </span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                    ASN
+                  </span>
+                  <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm">
+                    {selectedNode?.asn !== "XXXX" ? selectedNode?.asn : "Hidden"}
+                  </span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                    Last Seen
+                  </span>
+                  <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm">
+                    {selectedNode?.last_seen ? new Date(selectedNode.last_seen).toLocaleString() : 'N/A'}
+                  </span>
+                </div>
+
+                {selectedNode?.url && (
+                  <div className="flex justify-between items-center">
+                    <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                      Endpoint
+                    </span>
+                    <a 
+                      href={selectedNode.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-[#93a2ff] text-sm hover:underline"
+                    >
+                      {selectedNode.url.replace('https://', '')}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <Separator className="bg-[#292929] mx-4" />
+
+            {/* Performance Metrics */}
+            <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
+              <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                Performance (24h)
+              </h3>
+              
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                      Requests
+                    </span>
+                    <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-sm">
+                      1,247
+                    </span>
+                  </div>
+                  <div className="w-full bg-[#ffffff12] rounded-full h-1.5">
+                    <div className="bg-[#93a2ff] h-1.5 rounded-full" style={{ width: '78%' }}></div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                      Errors
+                    </span>
+                    <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-sm">
+                      3
+                    </span>
+                  </div>
+                  <div className="w-full bg-[#ffffff12] rounded-full h-1.5">
+                    <div className="bg-[#ff6b6b] h-1.5 rounded-full" style={{ width: '2%' }}></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                      Bandwidth
+                    </span>
+                    <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-sm">
+                      2.4 GB
+                    </span>
+                  </div>
+                  <div className="w-full bg-[#ffffff12] rounded-full h-1.5">
+                    <div className="bg-[#5fe9b5] h-1.5 rounded-full" style={{ width: '65%' }}></div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                      Connections
+                    </span>
+                    <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-sm">
+                      42
+                    </span>
+                  </div>
+                  <div className="w-full bg-[#ffffff12] rounded-full h-1.5">
+                    <div className="bg-[#ffc593] h-1.5 rounded-full" style={{ width: '35%' }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {selectedNode?.node_type === 'nildb' && (
+              <>
+                <Separator className="bg-[#292929] mx-4" />
+                
+                {/* Database Specific Metrics */}
+                <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
+                  <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                    Database Metrics
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-3">
+                    <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                      <CardContent className="p-4 text-center">
+                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                          Documents Stored
+                        </div>
+                        <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+                          12.4K
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                      <CardContent className="p-4 text-center">
+                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                          Query Rate
+                        </div>
+                        <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+                          156/min
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {selectedNode?.node_type === 'nilchain' && (
+              <>
+                <Separator className="bg-[#292929] mx-4" />
+                
+                {/* Validator Specific Metrics */}
+                <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
+                  <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                    Validator Metrics
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-3">
+                    <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                      <CardContent className="p-4 text-center">
+                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                          Blocks Validated
+                        </div>
+                        <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+                          8,942
+                        </div>
+                      </CardContent>
+                    </Card>
+                    <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                      <CardContent className="p-4 text-center">
+                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
+                          Stake Amount
+                        </div>
+                        <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+                          50K NIL
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </>
+            )}
           </main>
           <div className="relative self-stretch w-full h-px" />
           </>
