@@ -493,6 +493,123 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
             <Separator className="bg-[#292929] mx-4" />
 
+            {/* Geographic Location */}
+            <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
+              <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                Geographic Location
+              </h3>
+              
+              <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
+                <CardContent className="p-4">
+                  <div className="relative w-full h-48 bg-[#0a0a0a] rounded-lg overflow-hidden">
+                    {/* World Map SVG */}
+                    <svg
+                      viewBox="0 0 1000 500"
+                      className="w-full h-full"
+                    >
+                      {/* North America */}
+                      <path
+                        d="M50 100c30-20 80-25 120-15 50 15 90 50 110 95 15 35 10 75-10 105-25 40-70 65-120 70-40 5-85-5-115-30-35-30-55-75-50-120 5-50 40-85 65-105z"
+                        fill="#ffffff"
+                        opacity="0.15"
+                      />
+                      {/* South America */}
+                      <path
+                        d="M120 280c25-15 55-20 85-10 35 12 65 40 75 75 8 30 5 65-10 90-20 35-55 55-95 60-30 4-65-5-85-25-25-25-35-60-30-95 5-40 35-70 60-95z"
+                        fill="#ffffff"
+                        opacity="0.15"
+                      />
+                      {/* Europe */}
+                      <path
+                        d="M450 80c25-12 55-15 80-8 30 8 55 28 65 55 8 22 5 48-5 68-12 25-35 45-65 50-25 5-55-2-75-20-25-20-40-50-35-80 5-35 25-55 35-65z"
+                        fill="#ffffff"
+                        opacity="0.15"
+                      />
+                      {/* Africa */}
+                      <path
+                        d="M420 180c30-15 65-18 95-10 35 10 65 35 80 70 12 30 15 65 5 95-12 35-40 65-75 80-30 12-65 15-95 5-35-12-65-40-75-75-8-30-5-65 10-90 15-30 40-55 55-75z"
+                        fill="#ffffff"
+                        opacity="0.15"
+                      />
+                      {/* Asia */}
+                      <path
+                        d="M550 60c40-20 90-25 135-15 50 15 95 45 125 85 25 35 35 80 25 120-15 45-50 85-95 105-40 18-85 20-125 5-45-18-85-50-105-95-18-40-15-85 5-120 20-45 55-75 35-85z"
+                        fill="#ffffff"
+                        opacity="0.15"
+                      />
+                      {/* Australia */}
+                      <path
+                        d="M750 320c20-10 45-12 65-5 25 8 45 25 55 45 8 18 10 40 5 58-8 22-25 40-48 50-18 8-40 10-58 5-22-8-40-25-50-45-8-18-10-40-5-58 8-22 25-40 36-50z"
+                        fill="#ffffff"
+                        opacity="0.15"
+                      />
+                      {/* Antarctica */}
+                      <path
+                        d="M200 450c100-20 200-25 300-20 120 8 240 25 300 40 0 15-600 15-600 0z"
+                        fill="#ffffff"
+                        opacity="0.1"
+                      />
+                    </svg>
+
+                    {/* Node Location Marker */}
+                    {selectedNode?.coordinates && selectedNode.coordinates.length === 2 && (
+                      <div
+                        className="absolute w-3 h-3 bg-[#93a2ff] rounded-full border-2 border-white shadow-lg animate-pulse"
+                        style={{
+                          left: `${Math.max(5, Math.min(95, ((selectedNode.coordinates[0] + 180) / 360) * 100))}%`,
+                          top: `${Math.max(5, Math.min(95, ((90 - selectedNode.coordinates[1]) / 180) * 100))}%`,
+                          transform: 'translate(-50%, -50%)'
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-[#93a2ff] rounded-full animate-ping opacity-75"></div>
+                      </div>
+                    )}
+
+                    {/* Fallback marker for nodes without coordinates */}
+                    {(!selectedNode?.coordinates || selectedNode.coordinates.length !== 2) && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-white opacity-50 text-sm">
+                          Location data not available
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Location Details */}
+                  <div className="mt-4 space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                        City
+                      </span>
+                      <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm">
+                        {selectedNode?.city}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                        Country
+                      </span>
+                      <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm">
+                        {selectedNode?.country}
+                      </span>
+                    </div>
+                    {selectedNode?.coordinates && selectedNode.coordinates.length === 2 && (
+                      <div className="flex justify-between items-center">
+                        <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                          Coordinates
+                        </span>
+                        <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm font-mono">
+                          {selectedNode.coordinates[1].toFixed(4)}, {selectedNode.coordinates[0].toFixed(4)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Separator className="bg-[#292929] mx-4" />
+
             {/* Node Information */}
             <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
               <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
@@ -552,118 +669,6 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                   </div>
                 )}
               </div>
-            </div>
-
-            <Separator className="bg-[#292929] mx-4" />
-
-            {/* Geographic Location */}
-            <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
-              <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
-                Geographic Location
-              </h3>
-              
-              <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
-                <CardContent className="p-4">
-                  <div className="relative w-full h-48 bg-[#0a0a0a] rounded-lg overflow-hidden">
-                    {/* World Map SVG */}
-                    <svg
-                      viewBox="0 0 1000 500"
-                      className="w-full h-full"
-                      style={{ filter: 'brightness(0.3)' }}
-                    >
-                      {/* Simplified world map paths */}
-                      <path
-                        d="M158 206c-1-3-3-4-5-7-4-5-2-12 2-16 6-7 15-11 24-13 8-2 17-1 25 1 9 2 17 6 24 12 6 5 11 12 13 19 2 8 1 16-2 24-3 7-8 13-14 18-7 5-15 8-24 9-8 1-17-1-25-4-7-3-13-8-18-15z"
-                        fill="#ffffff"
-                        opacity="0.1"
-                      />
-                      {/* North America */}
-                      <path
-                        d="M50 150c20-10 40-15 60-12 25 4 45 20 55 45 8 20 5 42-5 60-12 22-35 38-60 42-20 3-42-2-58-15-18-15-28-38-25-62 3-28 20-50 33-58z"
-                        fill="#ffffff"
-                        opacity="0.1"
-                      />
-                      {/* Europe */}
-                      <path
-                        d="M450 120c15-8 32-10 48-5 18 6 33 20 40 38 6 15 5 32-2 46-8 16-22 28-38 34-14 5-30 4-44-2-16-7-29-20-35-36-5-14-4-30 2-44 7-16 18-28 29-31z"
-                        fill="#ffffff"
-                        opacity="0.1"
-                      />
-                      {/* Asia */}
-                      <path
-                        d="M600 100c25-12 55-15 82-8 30 8 55 28 70 55 12 22 15 48 8 72-8 28-28 52-54 66-22 12-48 15-72 8-28-8-52-28-66-54-12-22-15-48-8-72 8-28 28-52 40-67z"
-                        fill="#ffffff"
-                        opacity="0.1"
-                      />
-                      {/* Africa */}
-                      <path
-                        d="M420 200c18-10 40-12 60-6 22 7 40 22 50 42 8 16 10 35 5 52-6 20-20 37-38 48-16 9-35 12-53 8-20-5-38-18-48-36-8-15-10-33-6-50 5-19 18-36 30-58z"
-                        fill="#ffffff"
-                        opacity="0.1"
-                      />
-                      {/* Australia */}
-                      <path
-                        d="M750 320c12-6 26-8 39-4 15 4 28 14 35 27 6 11 7 24 3 36-5 14-15 26-28 32-11 5-24 6-36 3-14-4-26-14-32-27-5-11-6-24-3-36 4-14 14-26 22-31z"
-                        fill="#ffffff"
-                        opacity="0.1"
-                      />
-                    </svg>
-
-                    {/* Node Location Marker */}
-                    {selectedNode?.coordinates && (
-                      <div
-                        className="absolute w-3 h-3 bg-[#93a2ff] rounded-full border-2 border-white shadow-lg animate-pulse"
-                        style={{
-                          left: `${((selectedNode.coordinates[0] + 180) / 360) * 100}%`,
-                          top: `${((90 - selectedNode.coordinates[1]) / 180) * 100}%`,
-                          transform: 'translate(-50%, -50%)'
-                        }}
-                      >
-                        <div className="absolute inset-0 bg-[#93a2ff] rounded-full animate-ping opacity-75"></div>
-                      </div>
-                    )}
-
-                    {/* Fallback marker for nodes without coordinates */}
-                    {!selectedNode?.coordinates && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-white opacity-50 text-sm">
-                          Location data not available
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Location Details */}
-                  <div className="mt-4 space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
-                        City
-                      </span>
-                      <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm">
-                        {selectedNode?.city}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
-                        Country
-                      </span>
-                      <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm">
-                        {selectedNode?.country}
-                      </span>
-                    </div>
-                    {selectedNode?.coordinates && (
-                      <div className="flex justify-between items-center">
-                        <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
-                          Coordinates
-                        </span>
-                        <span className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm font-mono">
-                          {selectedNode.coordinates[1].toFixed(4)}, {selectedNode.coordinates[0].toFixed(4)}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
             </div>
 
             {selectedNode?.node_type === 'nildb' && (
