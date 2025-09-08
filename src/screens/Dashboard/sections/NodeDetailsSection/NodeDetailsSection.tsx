@@ -249,112 +249,78 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                   <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#93a2ff] text-sm text-center">
                     AI
                   </span>
-                  {/* nilGPT */}
+                  {/* Skillful AI */}
                   <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/nilgpt.png" alt="nilGPT" className="w-6 h-6 rounded-full object-cover" />
+                    <img src="/img/logos/skillfulai.svg" alt="Skillful AI" className="w-6 h-6 rounded-full object-cover" />
                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      nilGPT
+                      Skillful AI
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#93a2ff]"></div>
+                    </div>
+                  </div>
+                  {/* Rainfall */}
+                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer">
+                    <img src="/img/logos/rainfall.png" alt="Rainfall" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Rainfall
                       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#93a2ff]"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Data Storage Circle - Top Right */}
+              {/* Data Ownership Circle - Top Right */}
               <div className="absolute" style={{ right: '10%', top: '15%' }}>
                 <div className="relative w-28 h-28 rounded-full border-2 border-[#5fe9b566] bg-[#5fe9b51a] flex items-center justify-center">
                   <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#5fe9b5] text-sm text-center">
-                    Data Storage
+                    Data Ownership
                   </span>
-                  {/* Health Blocks */}
+                  {/* Nubila */}
                   <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/healthblocks.png" alt="Health Blocks" className="w-6 h-6 rounded-full object-cover" />
+                    <img src="/img/logos/nebula.svg" alt="Nubila" className="w-6 h-6 rounded-full object-cover" />
                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      Health Blocks
+                      Nubila
                       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
                     </div>
                   </div>
-                  {/* Monadic DNA */}
-                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/monadic.png" alt="Monadic DNA" className="w-6 h-6 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      Monadic DNA
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Infrastructure Circle - Bottom Left */}
-              <div className="absolute" style={{ left: '10%', bottom: '15%' }}>
-                <div className="relative w-28 h-28 rounded-full border-2 border-[#ffc59366] bg-[#ffc5931a] flex items-center justify-center">
-                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#ffc593] text-sm text-center">
-                    Infrastructure
-                  </span>
                   {/* Soarchain */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/soarchain.png" alt="Soarchain" className="w-6 h-6 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#ffc593] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
                       Soarchain
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#ffc593]"></div>
-                    </div>
-                  </div>
-                  {/* Nebula */}
-                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/nebula.svg" alt="Nebula" className="w-6 h-6 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#ffc593] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      Nebula
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#ffc593]"></div>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Analytics Circle - Bottom Right */}
-              <div className="absolute" style={{ right: '10%', bottom: '15%' }}>
+              {/* DeSci Circle - Bottom Left */}
+              <div className="absolute" style={{ left: '10%', bottom: '15%' }}>
                 <div className="relative w-28 h-28 rounded-full border-2 border-[#f3a8ff66] bg-[#f3a8ff1a] flex items-center justify-center">
                   <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#f3a8ff] text-sm text-center">
-                    Analytics
+                    DeSci
                   </span>
+                  {/* Monadic */}
+                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
+                    <img src="/img/logos/monadic.png" alt="Monadic" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Monadic
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
+                    </div>
+                  </div>
+                  {/* HealthBlocks */}
+                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
+                    <img src="/img/logos/healthblocks.png" alt="HealthBlocks" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      HealthBlocks
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
+                    </div>
+                  </div>
                   {/* Stadium Science */}
                   <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/stadiumscience.png" alt="Stadium Science" className="w-6 h-6 rounded-full object-cover" />
                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
                       Stadium Science
                       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
-                    </div>
-                  </div>
-                  {/* Skillful AI */}
-                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/skillfulai.svg" alt="Skillful AI" className="w-6 h-6 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      Skillful AI
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Finance Circle */}
-              <div className="absolute" style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}>
-                <div className="relative w-28 h-28 rounded-full border-2 border-[#5fe9d566] bg-[#5fe9d51a] flex items-center justify-center">
-                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#5fe9d5] text-sm text-center">
-                    Finance
-                  </span>
-                  {/* Tickr */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/tickr.svg" alt="Tickr" className="w-6 h-6 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9d5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      Tickr
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9d5]"></div>
-                    </div>
-                  </div>
-                  {/* Rainfall */}
-                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center group cursor-pointer">
-                    <img src="/img/logos/rainfall.png" alt="Rainfall" className="w-6 h-6 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9d5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                      Rainfall
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9d5]"></div>
                     </div>
                   </div>
                 </div>
@@ -369,10 +335,9 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                   </linearGradient>
                 </defs>
                 {/* Subtle connection lines between circles */}
-                <line x1="24%" y1="29%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
-                <line x1="76%" y1="29%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
-                <line x1="24%" y1="71%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
-                <line x1="76%" y1="71%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="24%" y1="29%" x2="76%" y2="29%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="24%" y1="71%" x2="76%" y2="29%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="24%" y1="29%" x2="24%" y2="71%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
               </svg>
             </div>
           </div>
