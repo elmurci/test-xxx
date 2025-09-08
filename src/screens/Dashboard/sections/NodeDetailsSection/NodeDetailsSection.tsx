@@ -235,6 +235,113 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
               })}
             </div>
       </section>
+      <section className="px-4 pb-6">
+        <div className="flex flex-col gap-6">
+          <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
+            Ecosystem Overview
+          </h3>
+          
+          <div className="flex items-center justify-center min-h-[400px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8">
+            <div className="relative w-full h-[350px] flex items-center justify-center">
+              {/* AI Circle */}
+              <div className="absolute" style={{ left: '15%', top: '20%' }}>
+                <div className="relative w-32 h-32 rounded-full border-2 border-[#93a2ff66] bg-[#93a2ff1a] flex items-center justify-center">
+                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#93a2ff] text-sm text-center">
+                    AI
+                  </span>
+                  {/* nilGPT */}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center">
+                    <img src="/img/logos/nilgpt.png" alt="nilGPT" className="w-6 h-6 rounded-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Data Storage Circle */}
+              <div className="absolute" style={{ right: '15%', top: '15%' }}>
+                <div className="relative w-40 h-40 rounded-full border-2 border-[#5fe9b566] bg-[#5fe9b51a] flex items-center justify-center">
+                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#5fe9b5] text-sm text-center">
+                    Data Storage
+                  </span>
+                  {/* Health Blocks */}
+                  <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center">
+                    <img src="/img/logos/healthblocks.png" alt="Health Blocks" className="w-8 h-8 rounded-full object-cover" />
+                  </div>
+                  {/* Monadic DNA */}
+                  <div className="absolute -bottom-2 -right-4 w-9 h-9 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center">
+                    <img src="/img/logos/monadic.png" alt="Monadic DNA" className="w-7 h-7 rounded-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Infrastructure Circle */}
+              <div className="absolute" style={{ left: '20%', bottom: '15%' }}>
+                <div className="relative w-36 h-36 rounded-full border-2 border-[#ffc59366] bg-[#ffc5931a] flex items-center justify-center">
+                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#ffc593] text-sm text-center">
+                    Infrastructure
+                  </span>
+                  {/* Soarchain */}
+                  <div className="absolute -top-2 -left-4 w-9 h-9 rounded-full border border-[#ffc593] bg-black flex items-center justify-center">
+                    <img src="/img/logos/soarchain.png" alt="Soarchain" className="w-7 h-7 rounded-full object-cover" />
+                  </div>
+                  {/* Nebula */}
+                  <div className="absolute -bottom-3 -right-2 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center">
+                    <img src="/img/logos/nebula.svg" alt="Nebula" className="w-6 h-6 rounded-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Analytics Circle */}
+              <div className="absolute" style={{ right: '20%', bottom: '20%' }}>
+                <div className="relative w-38 h-38 rounded-full border-2 border-[#f3a8ff66] bg-[#f3a8ff1a] flex items-center justify-center">
+                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#f3a8ff] text-sm text-center">
+                    Analytics
+                  </span>
+                  {/* Stadium Science */}
+                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center">
+                    <img src="/img/logos/stadiumscience.png" alt="Stadium Science" className="w-8 h-8 rounded-full object-cover" />
+                  </div>
+                  {/* Skillful AI */}
+                  <div className="absolute -bottom-2 -left-4 w-9 h-9 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center">
+                    <img src="/img/logos/skillfulai.svg" alt="Skillful AI" className="w-7 h-7 rounded-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Finance Circle */}
+              <div className="absolute" style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+                <div className="relative w-28 h-28 rounded-full border-2 border-[#5fe9d566] bg-[#5fe9d51a] flex items-center justify-center">
+                  <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#5fe9d5] text-sm text-center">
+                    Finance
+                  </span>
+                  {/* Tickr */}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center">
+                    <img src="/img/logos/tickr.svg" alt="Tickr" className="w-6 h-6 rounded-full object-cover" />
+                  </div>
+                  {/* Rainfall */}
+                  <div className="absolute -bottom-3 -left-2 w-9 h-9 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center">
+                    <img src="/img/logos/rainfall.png" alt="Rainfall" className="w-7 h-7 rounded-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Connection lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>
+                <defs>
+                  <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#93a2ff" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#5fe9b5" stopOpacity="0.1" />
+                  </linearGradient>
+                </defs>
+                {/* Subtle connection lines between circles */}
+                <line x1="25%" y1="35%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="75%" y1="30%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="35%" y1="75%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+                <line x1="70%" y1="70%" x2="50%" y2="50%" stroke="url(#connectionGradient)" strokeWidth="1" strokeDasharray="2,2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
       </div>
     );
   }
