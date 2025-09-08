@@ -18,28 +18,11 @@ interface NodeListSectionProps {
 export const NodeListSection = ({ activeTab, setActiveTab, searchQuery, setSearchQuery }: NodeListSectionProps): JSX.Element => {
   const { t } = useLanguage();
 
-  // Debug: Log every render - this should show up
-  console.log('🔥 NodeListSection rendered with activeTab:', activeTab);
-  console.log('🔥 Component is definitely running!');
+  console.log('COMPONENT LOADED - activeTab is:', activeTab);
 
-  // This should trigger when activeTab changes
   useEffect(() => {
-    console.log('🚀 useEffect triggered - Active tab changed to:', activeTab);
-    console.log('🚀 This means the tab actually changed!');
-    
-    // Your custom logic here
-    if (activeTab === 'Ecosystem') {
-      console.log('🌟 Switching to Ecosystem tab - clearing search');
-      setSearchQuery('');
-    }
-    
-  }, [activeTab, setSearchQuery]);
-
-  // Also log when buttons are clicked
-  const handleTabClick = (tabLabel: string) => {
-    console.log('🎯 Tab button clicked:', tabLabel);
-    setActiveTab(tabLabel);
-  };
+    console.log('USE EFFECT FIRED - activeTab changed to:', activeTab);
+  }, [activeTab]);
 
   const navigationTabs = [
     { label: "All Nodes", key: "nav.allNodes" },
@@ -82,7 +65,10 @@ export const NodeListSection = ({ activeTab, setActiveTab, searchQuery, setSearc
           {navigationTabs.map((tab, index) => (
             <button
               key={index}
-             onClick={() => handleTabClick(tab.label)}
+              onClick={() => {
+                console.log('BUTTON CLICKED:', tab.label);
+                setActiveTab(tab.label);
+              }}
               className="inline-flex items-center gap-1 relative flex-[0_0_auto] cursor-pointer"
             >
               <span
