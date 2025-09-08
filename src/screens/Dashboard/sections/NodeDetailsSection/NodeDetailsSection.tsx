@@ -7,6 +7,7 @@ import { EcosystemSection } from "./EcosystemSection";
 import { Avatar, AvatarImage } from "../../../../components/ui/avatar";
 import { DatabaseIcon, FileTextIcon, UsersIcon } from "lucide-react";
 import { nodeData } from "../../../../data";
+import { WorldMap } from "../../../../components/WorldMap";
 import {
   ToggleGroup,
   ToggleGroupItem,
@@ -501,78 +502,11 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
               
               <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                 <CardContent className="p-4">
-                  <div className="relative w-full h-48 bg-[#0a0a0a] rounded-lg overflow-hidden">
-                    {/* Simple World Map */}
-                    <svg
-                      viewBox="0 0 1000 500"
-                      className="w-full h-full"
-                    >
-                      {/* North America */}
-                      <path
-                        d="M50 150 Q100 120 180 130 Q250 140 300 160 L320 200 Q300 250 250 280 Q200 290 150 270 Q100 250 80 200 Z"
-                        fill="#ffffff"
-                        opacity="0.3"
-                      />
-                      
-                      {/* South America */}
-                      <path
-                        d="M200 300 Q220 280 250 290 Q280 310 290 350 Q300 400 280 450 Q250 470 220 460 Q200 440 190 400 Q180 350 200 300 Z"
-                        fill="#ffffff"
-                        opacity="0.3"
-                      />
-                      
-                      {/* Europe */}
-                      <path
-                        d="M450 120 Q500 110 550 120 Q580 140 570 170 Q550 190 500 180 Q470 160 450 120 Z"
-                        fill="#ffffff"
-                        opacity="0.3"
-                      />
-                      
-                      {/* Africa */}
-                      <path
-                        d="M480 200 Q520 190 550 210 Q570 250 560 300 Q550 350 530 380 Q500 390 480 370 Q460 330 470 280 Q475 240 480 200 Z"
-                        fill="#ffffff"
-                        opacity="0.3"
-                      />
-                      
-                      {/* Asia */}
-                      <path
-                        d="M600 100 Q700 90 800 110 Q850 130 870 170 Q880 220 860 260 Q820 280 760 270 Q700 250 650 220 Q600 180 600 100 Z"
-                        fill="#ffffff"
-                        opacity="0.3"
-                      />
-                      
-                      {/* Australia */}
-                      <path
-                        d="M750 350 Q800 340 850 350 Q880 370 870 390 Q850 400 800 395 Q750 385 750 350 Z"
-                        fill="#ffffff"
-                        opacity="0.3"
-                      />
-                    </svg>
-
-                    {/* Node Location Marker */}
-                    {selectedNode?.coordinates && selectedNode.coordinates.length === 2 && (
-                      <div
-                        className="absolute w-3 h-3 bg-[#93a2ff] rounded-full border-2 border-white shadow-lg animate-pulse"
-                        style={{
-                          left: `${Math.max(5, Math.min(95, ((selectedNode.coordinates[0] + 180) / 360) * 100))}%`,
-                          top: `${Math.max(5, Math.min(95, ((90 - selectedNode.coordinates[1]) / 180) * 100))}%`,
-                          transform: 'translate(-50%, -50%)'
-                        }}
-                      >
-                        <div className="absolute inset-0 bg-[#93a2ff] rounded-full animate-ping opacity-75"></div>
-                      </div>
-                    )}
-
-                    {/* Fallback marker for nodes without coordinates */}
-                    {(!selectedNode?.coordinates || selectedNode.coordinates.length !== 2) && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-white opacity-50 text-sm">
-                          Location data not available
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <WorldMap 
+                    coordinates={selectedNode?.coordinates}
+                    city={selectedNode?.city}
+                    country={selectedNode?.country}
+                  />
 
                   {/* Location Details */}
                   <div className="mt-4 space-y-2">
