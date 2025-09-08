@@ -1,5 +1,5 @@
 import { SearchIcon } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Input } from "../../../../components/ui/input";
 import { useLanguage } from "../../../../contexts/LanguageContext";
 import { LanguageSelector } from "../../../../components/LanguageSelector";
