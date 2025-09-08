@@ -250,8 +250,12 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                     AI
                   </span>
                   {/* nilGPT */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/nilgpt.png" alt="nilGPT" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      nilGPT
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#93a2ff]"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -263,12 +267,20 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                     Data Storage
                   </span>
                   {/* Health Blocks */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/healthblocks.png" alt="Health Blocks" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Health Blocks
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
+                    </div>
                   </div>
                   {/* Monadic DNA */}
-                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center">
+                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/monadic.png" alt="Monadic DNA" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Monadic DNA
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -280,12 +292,20 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                     Infrastructure
                   </span>
                   {/* Soarchain */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/soarchain.png" alt="Soarchain" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#ffc593] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Soarchain
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#ffc593]"></div>
+                    </div>
                   </div>
                   {/* Nebula */}
-                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center">
+                  <div className="absolute -bottom-3 -right-3 w-8 h-8 rounded-full border border-[#ffc593] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/nebula.svg" alt="Nebula" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#ffc593] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Nebula
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#ffc593]"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -297,12 +317,20 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                     Analytics
                   </span>
                   {/* Stadium Science */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/stadiumscience.png" alt="Stadium Science" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Stadium Science
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
+                    </div>
                   </div>
                   {/* Skillful AI */}
-                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center">
+                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/skillfulai.svg" alt="Skillful AI" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Skillful AI
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -314,12 +342,20 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                     Finance
                   </span>
                   {/* Tickr */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/tickr.svg" alt="Tickr" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9d5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Tickr
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9d5]"></div>
+                    </div>
                   </div>
                   {/* Rainfall */}
-                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center">
+                  <div className="absolute -bottom-3 -left-3 w-8 h-8 rounded-full border border-[#5fe9d5] bg-black flex items-center justify-center group cursor-pointer">
                     <img src="/img/logos/rainfall.png" alt="Rainfall" className="w-6 h-6 rounded-full object-cover" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9d5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                      Rainfall
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9d5]"></div>
+                    </div>
                   </div>
                 </div>
               </div>
