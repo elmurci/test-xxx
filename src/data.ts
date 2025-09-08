@@ -65,7 +65,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/cosmostation.jpeg"
+      logo: "img/logos/cosmostation.jpeg",
+      coordinates: [-0.1276, 51.5074]
     },
     {
       _id: "68bd9d9da4fd3dc82af6b16f",
@@ -82,7 +83,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/cosmostation.jpeg"
+      logo: "img/logos/cosmostation.jpeg",
+      coordinates: [-0.1276, 51.5074]
     },
     {
       _id: "68bd9d9d52e5f20808e64ea0",
@@ -99,7 +101,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/A41.jpg"
+      logo: "img/logos/A41.jpg",
+      coordinates: [127.7669, 35.9078]
     },
     {
       _id: "68bd9d9df7b580abc090fab1",
@@ -116,7 +119,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/finoa.jpg"
+      logo: "img/logos/finoa.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9dfd83fdcf919ddda8",
@@ -133,7 +137,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/finoa.jpg"
+      logo: "img/logos/finoa.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9ddef3b7df140bb286",
@@ -150,7 +155,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/everstake.jpg"
+      logo: "img/logos/everstake.jpg",
+      coordinates: [4.9041, 52.3676]
     },
     {
       _id: "68bd9d9d51736bf3d7c19b70",
@@ -167,7 +173,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/everstake.jpg"
+      logo: "img/logos/everstake.jpg",
+      coordinates: [-84.3880, 39.1031]
     },
     {
       _id: "68bd9d9db60c3c46d8d213b0",
@@ -184,7 +191,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/nodes_guru.png"
+      logo: "img/logos/nodes_guru.png",
+      coordinates: [2.3522, 48.8566]
     },
     {
       _id: "68bd9d9d896ffa949a2c2ba2",
@@ -201,7 +209,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/nodes_guru.png"
+      logo: "img/logos/nodes_guru.png",
+      coordinates: [24.9384, 60.1699]
     },
     {
       _id: "68bd9d9dde4f4f39678b5e14",
@@ -218,7 +227,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/polkatsu.jpg"
+      logo: "img/logos/polkatsu.jpg",
+      coordinates: [21.0122, 52.2297]
     },
     {
       _id: "68bd9d9d5cdba76c699232f2",
@@ -235,7 +245,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/bcw.jpg"
+      logo: "img/logos/bcw.jpg",
+      coordinates: [4.9041, 52.3676]
     },
     {
       _id: "68bd9d9d9dc079ae46f7504a",
@@ -252,7 +263,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/kjnodes.jpg"
+      logo: "img/logos/kjnodes.jpg",
+      coordinates: [2.3522, 48.8566]
     },
     {
       _id: "68bd9d9d269e19ac142b8ab6",
@@ -269,7 +281,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/noders.jpg"
+      logo: "img/logos/noders.jpg",
+      coordinates: [24.9384, 60.1699]
     },
     {
       _id: "68bd9d9dbf690645f2862bc0",
@@ -286,7 +299,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/noders.jpg"
+      logo: "img/logos/noders.jpg",
+      coordinates: [103.8198, 1.3521]
     },
     {
       _id: "68bd9d9d7a4c6e1e4df9e7a3",
@@ -303,7 +317,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/noders.jpg"
+      logo: "img/logos/noders.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9d543034bf7e899195",
@@ -320,7 +335,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/imperator.svg"
+      logo: "img/logos/imperator.svg",
+      coordinates: [4.4699, 50.5039]
     },
     {
       _id: "68bd9d9d268cec43e6cecb2f",
@@ -337,7 +353,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/kleomedes.jpg"
+      logo: "img/logos/kleomedes.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9d420f1311c7098cdf",
@@ -354,7 +371,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/binary.svg"
+      logo: "img/logos/binary.svg",
+      coordinates: [24.9384, 60.1699]
     },
     {
       _id: "68bd9d9df868ea425082c4f4",
@@ -371,7 +389,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/extramile.png"
+      logo: "img/logos/extramile.png",
+      coordinates: [139.6503, 35.6762]
     },
     {
       _id: "68bd9d9d2178bc7ac923c416",
@@ -388,7 +407,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/stakin.png"
+      logo: "img/logos/stakin.png",
+      coordinates: [21.0122, 52.2297]
     },
     {
       _id: "68bd9d9d6193597aaf073e12",
@@ -405,7 +425,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/stakin.png"
+      logo: "img/logos/stakin.png",
+      coordinates: [-118.2437, 34.0522]
     },
     {
       _id: "68bd9d9dbbec95484c82b739",
@@ -422,7 +443,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/republic.jpg"
+      logo: "img/logos/republic.jpg",
+      coordinates: [-118.2437, 34.0522]
     },
     {
       _id: "68bd9d9ddbe69b0861354556",
@@ -439,7 +461,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/republic.jpg"
+      logo: "img/logos/republic.jpg",
+      coordinates: [4.9041, 52.3676]
     },
     {
       _id: "68bd9d9d4e50b30782b0dbbb",
@@ -456,7 +479,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/nocturnal.jpg"
+      logo: "img/logos/nocturnal.jpg",
+      coordinates: [4.9041, 52.3676]
     },
     {
       _id: "68bd9d9d861d4feb80e2dc26",
@@ -473,7 +497,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/qubelabs.jpg"
+      logo: "img/logos/qubelabs.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9d5f0724e700774693",
@@ -490,7 +515,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/kingnodes.jpg"
+      logo: "img/logos/kingnodes.jpg",
+      coordinates: [151.2093, -33.8688]
     },
     {
       _id: "68bd9d9d62a97a0fa4ddfe84",
@@ -507,7 +533,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/p_ops.jpg"
+      logo: "img/logos/p_ops.jpg",
+      coordinates: [18.0686, 59.3293]
     },
     {
       _id: "68bd9d9d4214fdb095af0056",
@@ -524,7 +551,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/coinage.jpg"
+      logo: "img/logos/coinage.jpg",
+      coordinates: [16.3738, 48.2082]
     },
     {
       _id: "68bd9d9db05ddf2dd31f24af",
@@ -541,7 +569,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/monika.jpg"
+      logo: "img/logos/monika.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9db6c5ed5f55758cde",
@@ -558,7 +587,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/posthuman.jpg"
+      logo: "img/logos/posthuman.jpg",
+      coordinates: [-118.2437, 34.0522]
     },
     {
       _id: "68bd9d9d47df2fbd1b1ba4b1",
@@ -575,7 +605,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/stake_shark.jpg"
+      logo: "img/logos/stake_shark.jpg",
+      coordinates: [-118.2437, 34.0522]
     },
     {
       _id: "68bd9d9da003f451cb389fea",
@@ -592,7 +623,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/cosmic.jpg"
+      logo: "img/logos/cosmic.jpg",
+      coordinates: [24.9384, 60.1699]
     },
     {
       _id: "68bd9d9d855eef2e5d4b233a",
@@ -609,7 +641,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/citizen.jpg"
+      logo: "img/logos/citizen.jpg",
+      coordinates: [-9.1393, 38.7223]
     },
     {
       _id: "68bd9d9dfce3c93b42ac95cd",
@@ -626,7 +659,8 @@ export const nodeData = {
       live_since: "2024-08-12",
       cloud: "AWS",
       city: "London",
-      logo: "img/logos/citizen.jpg"
+      logo: "img/logos/citizen.jpg",
+      coordinates: [8.6821, 50.1109]
     },
     {
       _id: "68bd9d9d1fc27941c6d92c42",
