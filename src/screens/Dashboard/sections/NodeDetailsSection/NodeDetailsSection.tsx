@@ -186,13 +186,22 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                       className={`absolute w-[916px] h-[916px] top-[-760px] left-[-229px] ${stat.bgColor} rounded-[458px] blur-[150px] opacity-20`}
                     />
         
-                    <CardContent className="flex flex-col items-center justify-between relative flex-1 self-stretch w-full grow p-0">
+                    <CardContent className="flex flex-col items-center justify-between relative flex-1 self-stretch w-full grow p-0 overflow-visible">
                       <div className="relative w-48 h-[133.96px] mt-[-24.00px] flex items-center justify-center">
                         <IconComponent
                           size={96}
                           style={{ color: stat.color }}
                           className="w-24 h-24"
                         />
+                        {stat.disclaimer && (
+                          <div className="absolute -top-2 -right-2 group">
+                            <Info size={16} className="text-white opacity-40 hover:opacity-100 cursor-help" />
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-white rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
+                              {stat.disclaimer.join(' ')}
+                              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-white"></div>
+                            </div>
+                          </div>
+                        )}
                       </div>
         
                       <div className="gap-1 self-stretch w-full flex-[0_0_auto] flex flex-col items-start relative">
@@ -235,34 +244,34 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
               })}
             </div>
       </section>
-      <section className="px-4 pb-6">
-        <div className="flex flex-col gap-6">
+      <section className="px-4 pb-6 overflow-visible">
+        <div className="flex flex-col gap-6 overflow-visible">
           <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
             Ecosystem Overview
           </h3>
           
-          <div className="flex items-center justify-center min-h-[400px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8">
-            <div className="relative w-full h-[600px] flex items-center justify-center">
+          <div className="flex items-center justify-center min-h-[400px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8 overflow-visible">
+            <div className="relative w-full h-[600px] flex items-center justify-center overflow-visible">
               {/* AI Circle - Top Left */}
               <div className="absolute" style={{ left: '50%', top: '10%', transform: 'translateX(-50%)' }}>
-                <div className="relative w-40 h-40 rounded-full border-2 border-[#93a2ff66] bg-[#93a2ff1a] flex items-center justify-center">
+                <div className="relative w-40 h-40 rounded-full border-2 border-[#93a2ff66] bg-[#93a2ff1a] flex items-center justify-center overflow-visible">
                   <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#93a2ff] text-sm text-center">
                     AI
                   </span>
                   {/* Skillful AI */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer overflow-visible">
                     <img src="/img/logos/skillfulai.svg" alt="Skillful AI" className="w-8 h-8 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
                       Skillful AI
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#93a2ff]"></div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#93a2ff]"></div>
                     </div>
                   </div>
                   {/* Rainfall */}
-                  <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border border-[#93a2ff] bg-black flex items-center justify-center group cursor-pointer overflow-visible">
                     <img src="/img/logos/rainfall.png" alt="Rainfall" className="w-8 h-8 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-[#93a2ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
                       Rainfall
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#93a2ff]"></div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#93a2ff]"></div>
                     </div>
                   </div>
                 </div>
@@ -270,24 +279,24 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
               {/* Data Ownership Circle - Bottom Left */}
               <div className="absolute" style={{ left: '20%', bottom: '10%' }}>
-                <div className="relative w-40 h-40 rounded-full border-2 border-[#5fe9b566] bg-[#5fe9b51a] flex items-center justify-center">
+                <div className="relative w-40 h-40 rounded-full border-2 border-[#5fe9b566] bg-[#5fe9b51a] flex items-center justify-center overflow-visible">
                   <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#5fe9b5] text-sm text-center">
                     Data Ownership
                   </span>
                   {/* Nubila */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer overflow-visible">
                     <img src="/img/logos/nebula.svg" alt="Nubila" className="w-8 h-8 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
                       Nubila
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#5fe9b5]"></div>
                     </div>
                   </div>
                   {/* Soarchain */}
-                  <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full border border-[#5fe9b5] bg-black flex items-center justify-center group cursor-pointer overflow-visible">
                     <img src="/img/logos/soarchain.png" alt="Soarchain" className="w-8 h-8 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-[#5fe9b5] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
                       Soarchain
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#5fe9b5]"></div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#5fe9b5]"></div>
                     </div>
                   </div>
                 </div>
@@ -295,24 +304,24 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
               {/* DeSci Circle - Bottom Right */}
               <div className="absolute" style={{ right: '20%', bottom: '10%' }}>
-                <div className="relative w-40 h-40 rounded-full border-2 border-[#f3a8ff66] bg-[#f3a8ff1a] flex items-center justify-center">
+                <div className="relative w-40 h-40 rounded-full border-2 border-[#f3a8ff66] bg-[#f3a8ff1a] flex items-center justify-center overflow-visible">
                   <span className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-[#f3a8ff] text-sm text-center">
                     DeSci
                   </span>
                   {/* Monadic */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer overflow-visible">
                     <img src="/img/logos/monadic.png" alt="Monadic" className="w-8 h-8 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
                       Monadic
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#f3a8ff]"></div>
                     </div>
                   </div>
                   {/* HealthBlocks */}
-                  <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer">
+                  <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full border border-[#f3a8ff] bg-black flex items-center justify-center group cursor-pointer overflow-visible">
                     <img src="/img/logos/healthblocks.png" alt="HealthBlocks" className="w-8 h-8 rounded-full object-cover" />
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-black border border-[#f3a8ff] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[9999]">
                       HealthBlocks
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#f3a8ff]"></div>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-[#f3a8ff]"></div>
                     </div>
                   </div>
                 </div>
@@ -324,4 +333,7 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
       </div>
     );
   }
+
+  // For other tabs, return null or empty content for now
+  return null;
 };
