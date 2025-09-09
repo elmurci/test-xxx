@@ -188,15 +188,15 @@ export const VennDiagram: React.FC = () => {
     svg.selectAll("*").remove();
 
     const width = 800;
-    const height = 600;
+    const height = 800;
     const radius = 150;
 
     // Define circle centers - positioned so they touch where companies span categories
     const circles = [
-      { id: 'AI', cx: 220, cy: 170, r: radius, color: '#93a2ff', label: 'AI' },
-      { id: 'Data Storage', cx: 400, cy: 170, r: radius, color: '#5fe9b5', label: 'Data Storage' },
-      { id: 'DeSci', cx: 400, cy: 350, r: radius, color: '#f3a8ff', label: 'DeSci' },
-      { id: 'Data Verification', cx: 580, cy: 260, r: radius, color: '#ffc593', label: 'Data Verification' }
+      { id: 'AI', cx: 220, cy: 270, r: radius, color: '#93a2ff', label: 'AI' },
+      { id: 'Data Storage', cx: 400, cy: 270, r: radius, color: '#5fe9b5', label: 'Data Storage' },
+      { id: 'DeSci', cx: 400, cy: 450, r: radius, color: '#f3a8ff', label: 'DeSci' },
+      { id: 'Data Verification', cx: 580, cy: 360, r: radius, color: '#ffc593', label: 'Data Verification' }
     ];
 
     // Create gradient definitions
@@ -244,16 +244,16 @@ export const VennDiagram: React.FC = () => {
 
     // Position companies based on their categories
     const companyPositions: Record<string, { x: number; y: number }> = {
-      'rainfall': { x: 180, y: 140 }, // AI
-      'skillful-ai': { x: 220, y: 200 }, // AI
-      'capx': { x: 260, y: 160 }, // AI
-      'monadic': { x: 310, y: 170 }, // Data Storage & AI intersection
-      'healthblocks': { x: 400, y: 350 }, // DeSci center
-      'soarchain': { x: 400, y: 120 }, // Data Storage center
-      'nilgpt': { x: 350, y: 140 }, // AI & Data Storage intersection
-      'tickr': { x: 580, y: 260 }, // Data Verification center
-      'nubila': { x: 430, y: 280 }, // Data Storage & DeSci intersection
-      'stadium-science': { x: 370, y: 300 } // Data Storage & DeSci intersection
+      'rainfall': { x: 180, y: 240 }, // AI
+      'skillful-ai': { x: 220, y: 300 }, // AI
+      'capx': { x: 260, y: 260 }, // AI
+      'monadic': { x: 310, y: 270 }, // Data Storage & AI intersection
+      'healthblocks': { x: 400, y: 450 }, // DeSci center
+      'soarchain': { x: 400, y: 220 }, // Data Storage center
+      'nilgpt': { x: 350, y: 240 }, // AI & Data Storage intersection
+      'tickr': { x: 580, y: 360 }, // Data Verification center
+      'nubila': { x: 430, y: 380 }, // Data Storage & DeSci intersection
+      'stadium-science': { x: 370, y: 400 } // Data Storage & DeSci intersection
     };
 
     // Add company circles
@@ -316,12 +316,12 @@ export const VennDiagram: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[600px] flex items-center justify-center overflow-visible mt-32">
+    <div className="relative w-full h-[800px] flex items-center justify-center overflow-visible" style={{ marginTop: '200px' }}>
       <svg
         ref={svgRef}
         width="800"
-        height="600"
-        viewBox="0 0 800 600"
+        height="800"
+        viewBox="0 0 800 800"
         className="w-full h-full"
       />
 
