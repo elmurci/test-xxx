@@ -251,7 +251,7 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
             Ecosystem Overview
           </h3>
           
-          <div className="flex items-center justify-center min-h-[400px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8 overflow-visible">
+          <div className="flex items-center justify-center min-h-[600px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8 overflow-visible mt-8">
             <VennDiagram />
           </div>
         </div>
