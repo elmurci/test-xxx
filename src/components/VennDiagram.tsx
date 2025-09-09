@@ -107,8 +107,8 @@ const companies: Company[] = [
     id: 'stadium-science',
     name: 'Stadium Science',
     logo: '/img/logos/stadiumscience.png',
-    category: 'AI & Data',
-    description: 'Sports analytics platform using private computation for competitive advantage insights.',
+    category: 'Data Verification',
+    description: 'Sports analytics platform using private computation for competitive advantage insights and data verification.',
     website: 'stadiumscience.com',
     status: 'Live',
     metrics: {
@@ -124,13 +124,13 @@ export const VennDiagram: React.FC = () => {
 
   const getCompanyPosition = (companyId: string) => {
     const positions: Record<string, { left: string; top: string }> = {
-      'skillful-ai': { left: '25%', top: '20%' },
-      'rainfall': { left: '35%', top: '35%' },
-      'nebula': { left: '15%', top: '60%' },
-      'soarchain': { left: '30%', top: '70%' },
-      'monadic': { left: '70%', top: '60%' },
-      'healthblocks': { left: '75%', top: '35%' },
-      'stadium-science': { left: '50%', top: '50%' }
+      'skillful-ai': { left: '20%', top: '25%' },
+      'rainfall': { left: '30%', top: '30%' },
+      'nebula': { left: '15%', top: '65%' },
+      'soarchain': { left: '25%', top: '75%' },
+      'monadic': { left: '70%', top: '65%' },
+      'healthblocks': { left: '75%', top: '75%' },
+      'stadium-science': { left: '75%', top: '25%' }
     };
     return positions[companyId] || { left: '50%', top: '50%' };
   };
@@ -143,7 +143,7 @@ export const VennDiagram: React.FC = () => {
         return '#5fe9b5';
       case 'DeSci':
         return '#f3a8ff';
-      case 'AI & Data':
+      case 'Data Verification':
         return '#ffc593';
       default:
         return '#ffffff';
@@ -156,16 +156,16 @@ export const VennDiagram: React.FC = () => {
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 600">
         {/* AI Circle */}
         <circle
-          cx="300"
-          cy="200"
-          r="120"
+          cx="250"
+          cy="180"
+          r="100"
           fill="rgba(147, 162, 255, 0.1)"
           stroke="rgba(147, 162, 255, 0.4)"
           strokeWidth="2"
         />
         <text
-          x="300"
-          y="120"
+          x="250"
+          y="110"
           textAnchor="middle"
           fill="#93a2ff"
           fontSize="16"
@@ -177,16 +177,16 @@ export const VennDiagram: React.FC = () => {
 
         {/* Data Ownership Circle */}
         <circle
-          cx="200"
-          cy="350"
-          r="120"
+          cx="180"
+          cy="380"
+          r="100"
           fill="rgba(95, 233, 181, 0.1)"
           stroke="rgba(95, 233, 181, 0.4)"
           strokeWidth="2"
         />
         <text
-          x="120"
-          y="420"
+          x="110"
+          y="450"
           textAnchor="middle"
           fill="#5fe9b5"
           fontSize="16"
@@ -198,16 +198,16 @@ export const VennDiagram: React.FC = () => {
 
         {/* DeSci Circle */}
         <circle
-          cx="500"
-          cy="350"
-          r="120"
+          cx="520"
+          cy="380"
+          r="100"
           fill="rgba(243, 168, 255, 0.1)"
           stroke="rgba(243, 168, 255, 0.4)"
           strokeWidth="2"
         />
         <text
-          x="580"
-          y="420"
+          x="590"
+          y="450"
           textAnchor="middle"
           fill="#f3a8ff"
           fontSize="16"
@@ -215,6 +215,27 @@ export const VennDiagram: React.FC = () => {
           fontFamily="TWK_Everett-Medium, Helvetica"
         >
           DeSci
+        </text>
+
+        {/* Data Verification Circle */}
+        <circle
+          cx="550"
+          cy="180"
+          r="100"
+          fill="rgba(255, 197, 147, 0.1)"
+          stroke="rgba(255, 197, 147, 0.4)"
+          strokeWidth="2"
+        />
+        <text
+          x="550"
+          y="110"
+          textAnchor="middle"
+          fill="#ffc593"
+          fontSize="16"
+          fontWeight="500"
+          fontFamily="TWK_Everett-Medium, Helvetica"
+        >
+          Data Verification
         </text>
       </svg>
 
