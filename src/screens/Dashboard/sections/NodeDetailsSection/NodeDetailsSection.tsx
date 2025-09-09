@@ -77,7 +77,7 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
     return (
       <div>
         <section className="flex items-start gap-4 p-4 relative self-stretch w-full flex-[0_0_auto] z-[2]">
-        <div className="flex-1 grow rounded-2xl flex flex-col items-start relative">
+        <div className="flex-1 grow rounded-2xl flex flex-col items-start relative z-[1]">
           <header className="inline-flex items-center justify-center gap-2.5 pt-2 pb-4 px-2 relative flex-[0_0_auto]">
             <h2 className="relative w-fit mt-[-1.00px] [font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-2xl tracking-[-0.48px] leading-[31.2px] whitespace-nowrap">
               Nillion Ecosystem
