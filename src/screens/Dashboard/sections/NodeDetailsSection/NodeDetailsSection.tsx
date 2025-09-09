@@ -245,13 +245,13 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
               })}
             </div>
       </section>
-      <section className="px-4 pb-6 overflow-visible">
+      <section className="px-4 pb-6 pt-12 overflow-visible mt-12">
         <div className="flex flex-col gap-6 overflow-visible">
           <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
             Ecosystem Overview
           </h3>
           
-          <div className="flex items-center justify-center min-h-[600px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8 overflow-visible mt-8">
+          <div className="flex items-center justify-center min-h-[600px] bg-[#ffffff08] rounded-2xl border border-solid border-[#ffffff1a] p-8 overflow-visible mt-16">
             <VennDiagram />
           </div>
         </div>
