@@ -189,14 +189,14 @@ export const VennDiagram: React.FC = () => {
 
     const width = 800;
     const height = 600;
-    const radius = 120;
+    const radius = 150;
 
     // Define circle centers - positioned so they touch where companies span categories
     const circles = [
-      { id: 'AI', cx: 250, cy: 180, r: radius, color: '#93a2ff', label: 'AI' },
-      { id: 'Data Storage', cx: 400, cy: 180, r: radius, color: '#5fe9b5', label: 'Data Storage' },
-      { id: 'DeSci', cx: 400, cy: 320, r: radius, color: '#f3a8ff', label: 'DeSci' },
-      { id: 'Data Verification', cx: 550, cy: 250, r: radius, color: '#ffc593', label: 'Data Verification' }
+      { id: 'AI', cx: 220, cy: 170, r: radius, color: '#93a2ff', label: 'AI' },
+      { id: 'Data Storage', cx: 400, cy: 170, r: radius, color: '#5fe9b5', label: 'Data Storage' },
+      { id: 'DeSci', cx: 400, cy: 350, r: radius, color: '#f3a8ff', label: 'DeSci' },
+      { id: 'Data Verification', cx: 580, cy: 260, r: radius, color: '#ffc593', label: 'Data Verification' }
     ];
 
     // Create gradient definitions
@@ -244,16 +244,16 @@ export const VennDiagram: React.FC = () => {
 
     // Position companies based on their categories
     const companyPositions: Record<string, { x: number; y: number }> = {
-      'rainfall': { x: 220, y: 160 }, // AI
-      'skillful-ai': { x: 280, y: 200 }, // AI
-      'capx': { x: 250, y: 140 }, // AI
-      'monadic': { x: 325, y: 180 }, // Data Storage & AI intersection
-      'healthblocks': { x: 400, y: 320 }, // DeSci center
-      'soarchain': { x: 400, y: 180 }, // Data Storage center
-      'nilgpt': { x: 370, y: 150 }, // AI & Data Storage intersection
-      'tickr': { x: 550, y: 250 }, // Data Verification center
-      'nubila': { x: 430, y: 290 }, // Data Storage & DeSci intersection
-      'stadium-science': { x: 470, y: 310 } // Data Storage & DeSci intersection
+      'rainfall': { x: 180, y: 140 }, // AI
+      'skillful-ai': { x: 220, y: 200 }, // AI
+      'capx': { x: 260, y: 160 }, // AI
+      'monadic': { x: 310, y: 170 }, // Data Storage & AI intersection
+      'healthblocks': { x: 400, y: 350 }, // DeSci center
+      'soarchain': { x: 400, y: 120 }, // Data Storage center
+      'nilgpt': { x: 350, y: 140 }, // AI & Data Storage intersection
+      'tickr': { x: 580, y: 260 }, // Data Verification center
+      'nubila': { x: 430, y: 280 }, // Data Storage & DeSci intersection
+      'stadium-science': { x: 370, y: 300 } // Data Storage & DeSci intersection
     };
 
     // Add company circles
