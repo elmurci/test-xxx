@@ -21,20 +21,6 @@ interface Company {
 
 const companies: Company[] = [
   {
-    id: 'skillful-ai',
-    name: 'Skillful AI',
-    logo: '/img/logos/skillfulai.svg',
-    category: 'AI & Data Verification',
-    description: 'Advanced AI solutions leveraging private computation for secure machine learning and data analysis.',
-    website: 'skillful.ai',
-    status: 'Live',
-    metrics: {
-      tvl: '$2.4M',
-      volume24h: '$156K',
-      users: '1.2K'
-    }
-  },
-  {
     id: 'rainfall',
     name: 'Rainfall',
     logo: '/img/logos/rainfall.png',
@@ -49,38 +35,24 @@ const companies: Company[] = [
     }
   },
   {
-    id: 'nebula',
-    name: 'Nebula',
-    logo: '/img/logos/nebula.svg',
-    category: 'Data Ownership',
-    description: 'Decentralized data ownership platform enabling users to control and monetize their personal data.',
-    website: 'nebula.network',
+    id: 'skillful-ai',
+    name: 'Skillful AI',
+    logo: '/img/logos/skillfulai.svg',
+    category: 'AI',
+    description: 'Advanced AI solutions leveraging private computation for secure machine learning and data analysis.',
+    website: 'skillful.ai',
     status: 'Live',
     metrics: {
-      tvl: '$5.2M',
-      volume24h: '$280K',
-      users: '2.8K'
-    }
-  },
-  {
-    id: 'soarchain',
-    name: 'Soarchain',
-    logo: '/img/logos/soarchain.png',
-    category: 'Data Ownership & DeSci',
-    description: 'Blockchain infrastructure for secure data sharing and ownership verification.',
-    website: 'soarchain.com',
-    status: 'Live',
-    metrics: {
-      tvl: '$3.1M',
-      volume24h: '$120K',
-      users: '1.5K'
+      tvl: '$2.4M',
+      volume24h: '$156K',
+      users: '1.2K'
     }
   },
   {
     id: 'monadic',
     name: 'Monadic DNA',
     logo: '/img/logos/monadic.png',
-    category: 'DeSci',
+    category: 'Data Storage & AI',
     description: 'Decentralized science platform for secure genomic data analysis and research collaboration.',
     website: 'monadic.dna',
     status: 'Beta',
@@ -94,7 +66,7 @@ const companies: Company[] = [
     id: 'healthblocks',
     name: 'Health Blocks',
     logo: '/img/logos/healthblocks.png',
-    category: 'DeSci & Data Verification',
+    category: 'DeSci',
     description: 'Privacy-first healthcare data platform enabling secure medical research and patient data control.',
     website: 'healthblocks.io',
     status: 'Live',
@@ -105,10 +77,80 @@ const companies: Company[] = [
     }
   },
   {
+    id: 'soarchain',
+    name: 'Soarchain',
+    logo: '/img/logos/soarchain.png',
+    category: 'Data Storage',
+    description: 'Blockchain infrastructure for secure data sharing and ownership verification.',
+    website: 'soarchain.com',
+    status: 'Live',
+    metrics: {
+      tvl: '$3.1M',
+      volume24h: '$120K',
+      users: '1.5K'
+    }
+  },
+  {
+    id: 'nilgpt',
+    name: 'nilGPT',
+    logo: '/img/logos/nilgpt.png',
+    category: 'AI & Data Storage',
+    description: 'Privacy-preserving AI assistant leveraging secure multi-party computation for confidential conversations.',
+    website: 'nilgpt.ai',
+    status: 'Live',
+    metrics: {
+      tvl: '$3.5M',
+      volume24h: '$210K',
+      users: '4.2K'
+    }
+  },
+  {
+    id: 'tickr',
+    name: 'Tickr',
+    logo: '/img/logos/tickr.svg',
+    category: 'Data Verification',
+    description: 'Decentralized ticketing platform with private ownership verification and fraud prevention.',
+    website: 'tickr.io',
+    status: 'Live',
+    metrics: {
+      tvl: '$2.1M',
+      volume24h: '$95K',
+      users: '1.8K'
+    }
+  },
+  {
+    id: 'capx',
+    name: 'Capx',
+    logo: '/img/logos/empty.png',
+    category: 'AI',
+    description: 'AI-powered investment platform using private computation for secure portfolio management.',
+    website: 'capx.finance',
+    status: 'Beta',
+    metrics: {
+      tvl: '$1.6M',
+      volume24h: '$82K',
+      users: '720'
+    }
+  },
+  {
+    id: 'nubila',
+    name: 'Nubila',
+    logo: '/img/logos/empty.png',
+    category: 'Data Storage & DeSci',
+    description: 'Decentralized cloud storage platform for scientific research data with privacy guarantees.',
+    website: 'nubila.science',
+    status: 'Beta',
+    metrics: {
+      tvl: '$2.8M',
+      volume24h: '$134K',
+      users: '1.3K'
+    }
+  },
+  {
     id: 'stadium-science',
     name: 'Stadium Science',
     logo: '/img/logos/stadiumscience.png',
-    category: 'Data Verification',
+    category: 'Data Storage & DeSci',
     description: 'Sports analytics platform using private computation for competitive advantage insights and data verification.',
     website: 'stadiumscience.com',
     status: 'Live',
@@ -128,7 +170,7 @@ export const VennDiagram: React.FC = () => {
     switch (category) {
       case 'AI':
         return '#93a2ff';
-      case 'Data Ownership':
+      case 'Data Storage':
         return '#5fe9b5';
       case 'DeSci':
         return '#f3a8ff';
@@ -149,10 +191,10 @@ export const VennDiagram: React.FC = () => {
     const height = 600;
     const radius = 120;
 
-    // Define circle centers - only touching where companies span categories
+    // Define circle centers - positioned so they touch where companies span categories
     const circles = [
       { id: 'AI', cx: 250, cy: 180, r: radius, color: '#93a2ff', label: 'AI' },
-      { id: 'Data Ownership', cx: 400, cy: 180, r: radius, color: '#5fe9b5', label: 'Data Ownership' },
+      { id: 'Data Storage', cx: 400, cy: 180, r: radius, color: '#5fe9b5', label: 'Data Storage' },
       { id: 'DeSci', cx: 400, cy: 320, r: radius, color: '#f3a8ff', label: 'DeSci' },
       { id: 'Data Verification', cx: 550, cy: 250, r: radius, color: '#ffc593', label: 'Data Verification' }
     ];
@@ -200,15 +242,18 @@ export const VennDiagram: React.FC = () => {
         .text(circle.label);
     });
 
-    // Position companies - single category companies in centers, multi-category in intersections
+    // Position companies based on their categories
     const companyPositions: Record<string, { x: number; y: number }> = {
-      'skillful-ai': { x: 325, y: 215 }, // AI & Data Verification intersection
-      'rainfall': { x: 250, y: 180 }, // AI center
-      'nebula': { x: 400, y: 180 }, // Data Ownership center
-      'soarchain': { x: 400, y: 250 }, // Data Ownership & DeSci intersection
-      'monadic': { x: 400, y: 320 }, // DeSci center
-      'healthblocks': { x: 475, y: 285 }, // DeSci & Data Verification intersection
-      'stadium-science': { x: 550, y: 250 } // Data Verification center
+      'rainfall': { x: 220, y: 160 }, // AI
+      'skillful-ai': { x: 280, y: 200 }, // AI
+      'capx': { x: 250, y: 140 }, // AI
+      'monadic': { x: 325, y: 180 }, // Data Storage & AI intersection
+      'healthblocks': { x: 400, y: 320 }, // DeSci center
+      'soarchain': { x: 400, y: 180 }, // Data Storage center
+      'nilgpt': { x: 370, y: 150 }, // AI & Data Storage intersection
+      'tickr': { x: 550, y: 250 }, // Data Verification center
+      'nubila': { x: 430, y: 290 }, // Data Storage & DeSci intersection
+      'stadium-science': { x: 470, y: 310 } // Data Storage & DeSci intersection
     };
 
     // Add company circles
