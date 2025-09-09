@@ -316,7 +316,7 @@ export const VennDiagram: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[600px] flex items-center justify-center overflow-visible">
+    <div className="relative w-full h-[600px] flex items-center justify-center overflow-visible mt-32">
       <svg
         ref={svgRef}
         width="800"
