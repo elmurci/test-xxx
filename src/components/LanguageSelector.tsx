@@ -31,7 +31,7 @@ export const LanguageSelector: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-black border border-solid border-[#292929] rounded-xl shadow-lg z-[99999] min-w-[140px]">
+        <div className="absolute top-full right-0 mt-2 bg-black border border-solid border-[#292929] rounded-xl shadow-lg z-[999] min-w-[140px]">
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -54,7 +54,7 @@ export const LanguageSelector: React.FC = () => {
 
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[99998]" 
+          className="fixed inset-0 z-[998]" 
           onClick={() => setIsOpen(false)}
         />
       )}
