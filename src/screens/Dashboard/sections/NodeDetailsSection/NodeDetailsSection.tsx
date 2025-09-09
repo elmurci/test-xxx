@@ -5,7 +5,7 @@ import { Separator } from "../../../../components/ui/separator";
 import { useLanguage } from "../../../../contexts/LanguageContext";
 import { EcosystemSection } from "./EcosystemSection";
 import { Avatar, AvatarImage } from "../../../../components/ui/avatar";
-import { DatabaseIcon, FileTextIcon, UsersIcon } from "lucide-react";
+import { DatabaseIcon, FileTextIcon, UsersIcon, Info } from "lucide-react";
 import { nodeData } from "../../../../data";
 import { WorldMap } from "../../../../components/WorldMap";
 import {
@@ -534,9 +534,16 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
               <div className="grid grid-cols-2 gap-3">
                 <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                   <CardContent className="p-4">
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mb-2 group">
                       <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
                         Status
+                      </div>
+                      <div className="relative">
+                        <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                        <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 min-w-[200px]">
+                          Current operational status and uptime percentage
+                          <div className="absolute top-full right-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                        </div>
                       </div>
                       <div className="w-2 h-2 bg-[#5fe9b5] rounded-full"></div>
                     </div>
@@ -551,8 +558,17 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
                 <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                   <CardContent className="p-4">
-                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-2">
-                      Response Time
+                    <div className="flex items-center justify-between mb-2 group">
+                      <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                        Response Time
+                      </div>
+                      <div className="relative">
+                        <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                        <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 min-w-[200px]">
+                          Average response time for API requests over the last 24 hours
+                          <div className="absolute top-full right-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                        </div>
+                      </div>
                     </div>
                     <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
                       12ms
@@ -567,8 +583,15 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
               <div className="grid grid-cols-3 gap-3">
                 <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                   <CardContent className="p-3 text-center">
-                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                      CPU Usage
+                    <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                      <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                        CPU Usage
+                      </div>
+                      <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                        Current CPU utilization percentage
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                      </div>
                     </div>
                     <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
                       23%
@@ -578,8 +601,16 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
                 <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                   <CardContent className="p-3 text-center">
-                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                      Memory
+                    <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                      <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                        Memory
+                      </div>
+                      <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                        Current memory usage in gigabytes
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                      </div>
+                    </div>
                     </div>
                     <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
                       4.2GB
@@ -589,8 +620,16 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
                 <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                   <CardContent className="p-3 text-center">
-                    <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                      Storage
+                    <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                      <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                        Storage
+                      </div>
+                      <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                        Total storage capacity allocated to this node
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                      </div>
+                    </div>
                     </div>
                     <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
                       128GB
@@ -604,9 +643,16 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
             {/* Geographic Location */}
             <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
-              <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
-                Geographic Location
-              </h3>
+              <div className="flex items-center gap-2 group relative">
+                <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                  Geographic Location
+                </h3>
+                <Info className="w-4 h-4 text-white opacity-40 hover:opacity-80 cursor-help" />
+                <div className="absolute bottom-full left-0 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 min-w-[250px]">
+                  Physical location of the node server and geographic coordinates
+                  <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                </div>
+              </div>
               
               <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                 <CardContent className="p-4">
@@ -653,9 +699,16 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
             {/* Node Information */}
             <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
-              <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
-                Node Information
-              </h3>
+              <div className="flex items-center gap-2 group relative">
+                <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                  Node Information
+                </h3>
+                <Info className="w-4 h-4 text-white opacity-40 hover:opacity-80 cursor-help" />
+                <div className="absolute bottom-full left-0 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 min-w-[250px]">
+                  Technical details and network identifiers for this node
+                  <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                </div>
+              </div>
               
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
@@ -718,15 +771,29 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                 
                 {/* Database Specific Metrics */}
                 <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
-                  <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
-                    Database Metrics
-                  </h3>
+                 <div className="flex items-center gap-2 group relative">
+                   <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                     Database Metrics
+                   </h3>
+                   <Info className="w-4 h-4 text-white opacity-40 hover:opacity-80 cursor-help" />
+                   <div className="absolute bottom-full left-0 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 min-w-[250px]">
+                     Performance metrics specific to database operations
+                     <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                   </div>
+                 </div>
                   
                   <div className="grid grid-cols-2 gap-3">
                     <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                       <CardContent className="p-4 text-center">
-                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                          Documents Stored
+                       <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                         <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                           Documents Stored
+                         </div>
+                         <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                           Total number of documents stored in this database
+                           <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                         </div>
                         </div>
                         <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
                           12.4K
@@ -736,8 +803,15 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
 
                     <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                       <CardContent className="p-4 text-center">
-                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                          Query Rate
+                       <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                         <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                           Query Rate
+                         </div>
+                         <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                           Number of database queries processed per minute
+                           <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                         </div>
                         </div>
                         <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
                           156/min
@@ -755,15 +829,29 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                 
                 {/* Validator Specific Metrics */}
                 <div className="flex flex-col gap-4 px-4 relative self-stretch w-full">
-                  <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
-                    Validator Metrics
-                  </h3>
+                 <div className="flex items-center gap-2 group relative">
+                   <h3 className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
+                     Validator Metrics
+                   </h3>
+                   <Info className="w-4 h-4 text-white opacity-40 hover:opacity-80 cursor-help" />
+                   <div className="absolute bottom-full left-0 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 min-w-[250px]">
+                     Performance metrics specific to blockchain validation
+                     <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                   </div>
+                 </div>
                   
                   <div className="grid grid-cols-2 gap-3">
                     <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                       <CardContent className="p-4 text-center">
-                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                          Blocks Validated
+                       <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                         <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                           Blocks Validated
+                         </div>
+                         <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                           Total number of blocks validated by this node
+                           <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                         </div>
                         </div>
                         <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
                           8,942
@@ -772,8 +860,15 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                     </Card>
                     <Card className="bg-[#ffffff08] border border-solid border-[#292929] rounded-xl overflow-hidden">
                       <CardContent className="p-4 text-center">
-                        <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60 mb-1">
-                          Stake Amount
+                       <div className="flex items-center justify-center gap-1 mb-1 group relative">
+                         <div className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-xs opacity-60">
+                           Stake Amount
+                         </div>
+                         <Info className="w-3 h-3 text-white opacity-40 hover:opacity-80 cursor-help" />
+                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-[#292929] rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                           Amount of NIL tokens staked by this validator
+                           <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
+                         </div>
                         </div>
                         <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-lg">
                           50K NIL
