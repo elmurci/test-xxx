@@ -611,7 +611,7 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#292929]"></div>
                       </div>
                     </div>
-                    </div>
+                  </CardContent>
                     <div className="[font-family:'TWK_Everett-Medium',Helvetica] font-medium text-white text-base">
                       4.2GB
                     </div>
