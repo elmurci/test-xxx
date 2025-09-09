@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import * as d3 from 'd3';
 import { X } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
@@ -121,19 +122,7 @@ const companies: Company[] = [
 
 export const VennDiagram: React.FC = () => {
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
-
-  const getCompanyPosition = (companyId: string) => {
-    const positions: Record<string, { left: string; top: string }> = {
-      'skillful-ai': { left: '20%', top: '25%' },
-      'rainfall': { left: '30%', top: '30%' },
-      'nebula': { left: '15%', top: '65%' },
-      'soarchain': { left: '25%', top: '75%' },
-      'monadic': { left: '70%', top: '65%' },
-      'healthblocks': { left: '75%', top: '75%' },
-      'stadium-science': { left: '75%', top: '25%' }
-    };
-    return positions[companyId] || { left: '50%', top: '50%' };
-  };
+  const svgRef = useRef<SVGSVGElement>(null);
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -150,121 +139,146 @@ export const VennDiagram: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (!svgRef.current) return;
+
+    const svg = d3.select(svgRef.current);
+    svg.selectAll("*").remove();
+
+    const width = 800;
+    const height = 600;
+    const radius = 120;
+
+    // Define circle centers for proper Venn diagram
+    const circles = [
+      { id: 'AI', cx: 280, cy: 200, r: radius, color: '#93a2ff', label: 'AI' },
+      { id: 'Data Ownership', cx: 520, cy: 200, r: radius, color: '#5fe9b5', label: 'Data Ownership' },
+      { id: 'DeSci', cx: 320, cy: 350, r: radius, color: '#f3a8ff', label: 'DeSci' },
+      { id: 'Data Verification', cx: 480, cy: 350, r: radius, color: '#ffc593', label: 'Data Verification' }
+    ];
+
+    // Create gradient definitions
+    const defs = svg.append('defs');
+    circles.forEach(circle => {
+      const gradient = defs.append('radialGradient')
+        .attr('id', `gradient-${circle.id.replace(' ', '-')}`)
+        .attr('cx', '50%')
+        .attr('cy', '50%')
+        .attr('r', '50%');
+
+      gradient.append('stop')
+        .attr('offset', '0%')
+        .attr('stop-color', circle.color)
+        .attr('stop-opacity', 0.2);
+
+      gradient.append('stop')
+        .attr('offset', '100%')
+        .attr('stop-color', circle.color)
+        .attr('stop-opacity', 0.05);
+    });
+
+    // Draw circles
+    circles.forEach(circle => {
+      svg.append('circle')
+        .attr('cx', circle.cx)
+        .attr('cy', circle.cy)
+        .attr('r', circle.r)
+        .attr('fill', `url(#gradient-${circle.id.replace(' ', '-')})`)
+        .attr('stroke', circle.color)
+        .attr('stroke-width', 2)
+        .attr('stroke-opacity', 0.6);
+
+      // Add labels
+      svg.append('text')
+        .attr('x', circle.cx)
+        .attr('y', circle.cy - circle.r - 20)
+        .attr('text-anchor', 'middle')
+        .attr('fill', circle.color)
+        .attr('font-size', '16px')
+        .attr('font-weight', '500')
+        .attr('font-family', 'TWK_Everett-Medium, Helvetica')
+        .text(circle.label);
+    });
+
+    // Position companies within their circles
+    const companyPositions: Record<string, { x: number; y: number }> = {
+      'skillful-ai': { x: 250, y: 180 },
+      'rainfall': { x: 310, y: 220 },
+      'nebula': { x: 490, y: 180 },
+      'soarchain': { x: 550, y: 220 },
+      'monadic': { x: 290, y: 380 },
+      'healthblocks': { x: 350, y: 320 },
+      'stadium-science': { x: 510, y: 380 }
+    };
+
+    // Add company circles
+    companies.forEach(company => {
+      const pos = companyPositions[company.id];
+      const color = getCategoryColor(company.category);
+
+      const companyGroup = svg.append('g')
+        .attr('class', 'company-circle')
+        .style('cursor', 'pointer')
+        .on('click', () => setSelectedCompany(company))
+        .on('mouseover', function() {
+          d3.select(this).select('circle')
+            .transition()
+            .duration(200)
+            .attr('r', 35)
+            .attr('stroke-width', 3);
+        })
+        .on('mouseout', function() {
+          d3.select(this).select('circle')
+            .transition()
+            .duration(200)
+            .attr('r', 30)
+            .attr('stroke-width', 2);
+        });
+
+      // Company circle background
+      companyGroup.append('circle')
+        .attr('cx', pos.x)
+        .attr('cy', pos.y)
+        .attr('r', 30)
+        .attr('fill', '#000000')
+        .attr('stroke', color)
+        .attr('stroke-width', 2)
+        .style('filter', `drop-shadow(0 0 10px ${color}33)`);
+
+      // Company logo (using foreignObject to embed HTML img)
+      companyGroup.append('foreignObject')
+        .attr('x', pos.x - 20)
+        .attr('y', pos.y - 20)
+        .attr('width', 40)
+        .attr('height', 40)
+        .append('xhtml:div')
+        .style('width', '40px')
+        .style('height', '40px')
+        .style('border-radius', '50%')
+        .style('overflow', 'hidden')
+        .style('display', 'flex')
+        .style('align-items', 'center')
+        .style('justify-content', 'center')
+        .append('xhtml:img')
+        .attr('src', company.logo)
+        .attr('alt', company.name)
+        .style('width', '32px')
+        .style('height', '32px')
+        .style('object-fit', 'cover')
+        .style('border-radius', '50%');
+    });
+
+  }, []);
+
   return (
     <div className="relative w-full h-[600px] flex items-center justify-center overflow-visible">
-      {/* Venn Diagram Circles */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 600">
-        {/* AI Circle */}
-        <circle
-          cx="250"
-          cy="180"
-          r="100"
-          fill="rgba(147, 162, 255, 0.1)"
-          stroke="rgba(147, 162, 255, 0.4)"
-          strokeWidth="2"
-        />
-        <text
-          x="250"
-          y="110"
-          textAnchor="middle"
-          fill="#93a2ff"
-          fontSize="16"
-          fontWeight="500"
-          fontFamily="TWK_Everett-Medium, Helvetica"
-        >
-          AI
-        </text>
-
-        {/* Data Ownership Circle */}
-        <circle
-          cx="180"
-          cy="380"
-          r="100"
-          fill="rgba(95, 233, 181, 0.1)"
-          stroke="rgba(95, 233, 181, 0.4)"
-          strokeWidth="2"
-        />
-        <text
-          x="110"
-          y="450"
-          textAnchor="middle"
-          fill="#5fe9b5"
-          fontSize="16"
-          fontWeight="500"
-          fontFamily="TWK_Everett-Medium, Helvetica"
-        >
-          Data Ownership
-        </text>
-
-        {/* DeSci Circle */}
-        <circle
-          cx="520"
-          cy="380"
-          r="100"
-          fill="rgba(243, 168, 255, 0.1)"
-          stroke="rgba(243, 168, 255, 0.4)"
-          strokeWidth="2"
-        />
-        <text
-          x="590"
-          y="450"
-          textAnchor="middle"
-          fill="#f3a8ff"
-          fontSize="16"
-          fontWeight="500"
-          fontFamily="TWK_Everett-Medium, Helvetica"
-        >
-          DeSci
-        </text>
-
-        {/* Data Verification Circle */}
-        <circle
-          cx="550"
-          cy="180"
-          r="100"
-          fill="rgba(255, 197, 147, 0.1)"
-          stroke="rgba(255, 197, 147, 0.4)"
-          strokeWidth="2"
-        />
-        <text
-          x="550"
-          y="110"
-          textAnchor="middle"
-          fill="#ffc593"
-          fontSize="16"
-          fontWeight="500"
-          fontFamily="TWK_Everett-Medium, Helvetica"
-        >
-          Data Verification
-        </text>
-      </svg>
-
-      {/* Company Circles */}
-      {companies.map((company) => {
-        const position = getCompanyPosition(company.id);
-        const color = getCategoryColor(company.category);
-        
-        return (
-          <div
-            key={company.id}
-            className="absolute w-16 h-16 rounded-full border-2 bg-black flex items-center justify-center cursor-pointer hover:scale-110 transition-all duration-200 z-10"
-            style={{
-              left: position.left,
-              top: position.top,
-              transform: 'translate(-50%, -50%)',
-              borderColor: color,
-              boxShadow: `0 0 20px ${color}33`
-            }}
-            onClick={() => setSelectedCompany(company)}
-          >
-            <img
-              src={company.logo}
-              alt={company.name}
-              className="w-10 h-10 rounded-full object-cover"
-            />
-          </div>
-        );
-      })}
+      <svg
+        ref={svgRef}
+        width="800"
+        height="600"
+        viewBox="0 0 800 600"
+        className="w-full h-full"
+      />
 
       {/* Popup Modal */}
       {selectedCompany && (
