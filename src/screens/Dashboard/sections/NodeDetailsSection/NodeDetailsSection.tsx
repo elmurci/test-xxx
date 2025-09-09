@@ -499,7 +499,7 @@ export const NodeDetailsSection = ({ activeTab, searchQuery, selectedNodeId, set
         </div>
 
       {/* Right Panel - Node Details */}
-      <aside className="flex flex-col w-[602px] items-start relative self-stretch mt-[-1.00px] mb-[-1.00px] mr-[-1.00px] bg-black border border-solid border-[#292929]">
+      <aside className="flex flex-col w-[602px] items-start sticky top-0 h-screen overflow-y-auto self-stretch mt-[-1.00px] mb-[-1.00px] mr-[-1.00px] bg-black border border-solid border-[#292929]">
         {selectedNode && (
           <>
           <header className="flex items-end justify-between px-4 py-6 relative self-stretch w-full flex-[0_0_auto]">
