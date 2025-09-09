@@ -24,6 +24,48 @@ export const Dashboard = (): JSX.Element => {
             selectedNodeId={selectedNodeId}
             setSelectedNodeId={setSelectedNodeId}
           />
+          
+          <footer className="bg-black border-t border-solid border-[#292929] px-6 py-8">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <img
+                  className="w-4 h-4"
+                  alt="Nillion"
+                  src="/img/nillion_white_black.jpg"
+                />
+                <span className="[font-family:'TWK_Everett-Light',Helvetica] font-light text-white text-sm opacity-60">
+                  © 2025 Nillion. All rights reserved.
+                </span>
+              </div>
+              
+              <div className="flex items-center gap-6">
+                <a 
+                  href="https://nillion.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm opacity-60 hover:opacity-100 transition-opacity duration-200"
+                >
+                  Website
+                </a>
+                <a 
+                  href="https://docs.nillion.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm opacity-60 hover:opacity-100 transition-opacity duration-200"
+                >
+                  Documentation
+                </a>
+                <a 
+                  href="https://github.com/nillion-oss" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="[font-family:'TWK_Everett-Regular',Helvetica] font-normal text-white text-sm opacity-60 hover:opacity-100 transition-opacity duration-200"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
