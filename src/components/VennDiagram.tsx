@@ -24,7 +24,7 @@ const companies: Company[] = [
     id: 'skillful-ai',
     name: 'Skillful AI',
     logo: '/img/logos/skillfulai.svg',
-    category: 'AI',
+    category: 'AI & Data Verification',
     description: 'Advanced AI solutions leveraging private computation for secure machine learning and data analysis.',
     website: 'skillful.ai',
     status: 'Live',
@@ -66,7 +66,7 @@ const companies: Company[] = [
     id: 'soarchain',
     name: 'Soarchain',
     logo: '/img/logos/soarchain.png',
-    category: 'Data Ownership',
+    category: 'Data Ownership & DeSci',
     description: 'Blockchain infrastructure for secure data sharing and ownership verification.',
     website: 'soarchain.com',
     status: 'Live',
@@ -94,7 +94,7 @@ const companies: Company[] = [
     id: 'healthblocks',
     name: 'Health Blocks',
     logo: '/img/logos/healthblocks.png',
-    category: 'DeSci',
+    category: 'DeSci & Data Verification',
     description: 'Privacy-first healthcare data platform enabling secure medical research and patient data control.',
     website: 'healthblocks.io',
     status: 'Live',
@@ -149,12 +149,12 @@ export const VennDiagram: React.FC = () => {
     const height = 600;
     const radius = 120;
 
-    // Define circle centers for proper Venn diagram
+    // Define circle centers - only touching where companies span categories
     const circles = [
-      { id: 'AI', cx: 280, cy: 200, r: radius, color: '#93a2ff', label: 'AI' },
-      { id: 'Data Ownership', cx: 520, cy: 200, r: radius, color: '#5fe9b5', label: 'Data Ownership' },
-      { id: 'DeSci', cx: 320, cy: 350, r: radius, color: '#f3a8ff', label: 'DeSci' },
-      { id: 'Data Verification', cx: 480, cy: 350, r: radius, color: '#ffc593', label: 'Data Verification' }
+      { id: 'AI', cx: 250, cy: 180, r: radius, color: '#93a2ff', label: 'AI' },
+      { id: 'Data Ownership', cx: 400, cy: 180, r: radius, color: '#5fe9b5', label: 'Data Ownership' },
+      { id: 'DeSci', cx: 400, cy: 320, r: radius, color: '#f3a8ff', label: 'DeSci' },
+      { id: 'Data Verification', cx: 550, cy: 250, r: radius, color: '#ffc593', label: 'Data Verification' }
     ];
 
     // Create gradient definitions
@@ -200,15 +200,15 @@ export const VennDiagram: React.FC = () => {
         .text(circle.label);
     });
 
-    // Position companies within their circles
+    // Position companies - single category companies in centers, multi-category in intersections
     const companyPositions: Record<string, { x: number; y: number }> = {
-      'skillful-ai': { x: 250, y: 180 },
-      'rainfall': { x: 310, y: 220 },
-      'nebula': { x: 490, y: 180 },
-      'soarchain': { x: 550, y: 220 },
-      'monadic': { x: 290, y: 380 },
-      'healthblocks': { x: 350, y: 320 },
-      'stadium-science': { x: 510, y: 380 }
+      'skillful-ai': { x: 325, y: 215 }, // AI & Data Verification intersection
+      'rainfall': { x: 250, y: 180 }, // AI center
+      'nebula': { x: 400, y: 180 }, // Data Ownership center
+      'soarchain': { x: 400, y: 250 }, // Data Ownership & DeSci intersection
+      'monadic': { x: 400, y: 320 }, // DeSci center
+      'healthblocks': { x: 475, y: 285 }, // DeSci & Data Verification intersection
+      'stadium-science': { x: 550, y: 250 } // Data Verification center
     };
 
     // Add company circles
